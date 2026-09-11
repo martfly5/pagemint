@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>PageMint — Ebooks worth reading twice</title>
+<meta name="description" content="PageMint is a digital bookstore for Study, Earning, Story and Comics ebooks — instant download, no printing, no waiting." />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header__bar">
+    <a href="index.html" class="logo">Page<span>Mint</span></a>
+    <ul class="main-nav">
+      <li><a href="index.html" aria-current="page">Home</a></li>
+      <li><a href="store.html">Ebooks Store</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+    <div class="header-actions">
+      <a href="store.html" class="icon-btn" aria-label="Search ebooks">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </a>
+      <button class="icon-btn" data-open-cart aria-label="Open cart">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <span class="cart-count" data-count="0">0</span>
+      </button>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <div>
+      <p class="hero__kicker">A digital bookstore</p>
+      <h1>Fresh ideas, freshly minted.</h1>
+      <p class="lede">PageMint sells ebooks across Study, Earning, Story and Comics — written to be read on a phone, downloaded once, and kept forever. No printing, no shipping, no waiting.</p>
+      <div class="hero__ctas">
+        <a href="store.html" class="btn btn-primary">Browse the store</a>
+        <a href="about.html" class="btn btn-outline">Why PageMint</a>
+      </div>
+      <div class="hero__stats">
+        <div><strong>18+</strong><span>ebooks live</span></div>
+        <div><strong>4</strong><span>categories</span></div>
+        <div><strong>2 min</strong><span>to first page</span></div>
+      </div>
+    </div>
+    <div class="shelf" aria-hidden="true">
+      <a href="store.html?cat=study" class="spine">Study</a>
+      <a href="store.html?cat=earning" class="spine">Earning</a>
+      <a href="store.html?cat=story" class="spine">Story</a>
+      <a href="store.html?cat=comics" class="spine">Comics</a>
+      <a href="store.html" class="spine">More</a>
+    </div>
+  </div>
+</section>
+
+<section class="categories">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <h2>Pick a shelf</h2>
+        <p>Every ebook on PageMint sits on one of these four shelves.</p>
+      </div>
+      <a href="store.html" class="btn btn-outline btn-sm">See everything</a>
+    </div>
+    <div class="cat-grid" id="categoryGrid"></div>
+  </div>
+</section>
+
+<section class="categories" style="padding-top:0;">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <h2>Reader favourites</h2>
+        <p>The ebooks people keep coming back to buy for a friend.</p>
+      </div>
+      <a href="store.html" class="btn btn-outline btn-sm">View all</a>
+    </div>
+    <div class="book-rail-scroller" id="featuredRail"></div>
+  </div>
+</section>
+
+<section class="categories" style="padding-top:0;">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <h2>Just added</h2>
+        <p>New titles that went up on PageMint recently.</p>
+      </div>
+      <a href="store.html" class="btn btn-outline btn-sm">View all</a>
+    </div>
+    <div class="book-rail-scroller" id="newRail"></div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="container">
+    <h2>Why people buy from PageMint</h2>
+    <div class="band-grid">
+      <div class="quote-card">
+        <p class="q">"I bought the exam companion two nights before my boards. Straight to the point, no fluff."</p>
+        <p class="who">— A Study shelf reader</p>
+      </div>
+      <div class="quote-card">
+        <p class="q">"Freelance, From Zero is the first guide that told me what to actually say to a client."</p>
+        <p class="who">— An Earning shelf reader</p>
+      </div>
+      <div class="quote-card">
+        <p class="q">"Rooftop Runners reads like a film. I've re-read issue one three times."</p>
+        <p class="who">— A Comics shelf reader</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="newsletter">
+  <div class="container">
+    <h2>Get new releases in your inbox</h2>
+    <p>One email a month, whenever a new ebook goes up on a shelf you follow.</p>
+    <form onsubmit="event.preventDefault(); this.querySelector('.form-success-inline').style.display='block';">
+      <input type="email" required placeholder="you@example.com" aria-label="Email address" />
+      <button class="btn btn-mint" type="submit">Notify me</button>
+    </form>
+    <p class="form-success-inline" style="display:none;color:var(--mint);font-weight:600;margin-top:14px;">You're on the list.</p>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" class="logo">Page<span>Mint</span></a>
+        <p style="margin-top:12px;max-width:34ch;">A small digital bookstore for readers who'd rather download than wait for delivery.</p>
+      </div>
+      <div>
+        <h5>Explore</h5>
+        <ul>
+          <li><a href="store.html">Ebooks Store</a></li>
+          <li><a href="store.html?cat=study">Study</a></li>
+          <li><a href="store.html?cat=earning">Earning</a></li>
+          <li><a href="store.html?cat=story">Story</a></li>
+          <li><a href="store.html?cat=comics">Comics</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>PageMint</h5>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Get in touch</h5>
+        <ul>
+          <li><a href="mailto:hello@pagemint.example">hello@pagemint.example</a></li>
+          <li><a href="contact.html">Contact form</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 PageMint. All rights reserved.</span>
+      <span>Made for readers, one shelf at a time.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Book detail modal -->
+<div class="modal-overlay" id="bookModal">
+  <div class="modal"></div>
+</div>
+
+<!-- Cart drawer -->
+<div class="cart-overlay" id="cartOverlay">
+  <div class="cart-drawer">
+    <div class="cart-head">
+      <h3>Your cart</h3>
+      <button class="icon-btn" data-close-cart aria-label="Close cart">✕</button>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-foot" id="cartFoot">
+      <div class="cart-total"><span>Total</span><span id="cartTotalAmount">₹0</span></div>
+      <button class="btn btn-primary btn-block" data-checkout>Checkout</button>
+      <p class="cart-note">Ebooks are delivered as an instant download link after payment.</p>
+    </div>
+  </div>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/render.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

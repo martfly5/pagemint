@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Contact Us — PageMint</title>
+<meta name="description" content="Get in touch with PageMint about an order, a book suggestion, or anything else." />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header__bar">
+    <a href="index.html" class="logo">Page<span>Mint</span></a>
+    <ul class="main-nav">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="store.html">Ebooks Store</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html" aria-current="page">Contact Us</a></li>
+    </ul>
+    <div class="header-actions">
+      <button class="icon-btn" data-open-cart aria-label="Open cart">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <span class="cart-count" data-count="0">0</span>
+      </button>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="page-header">
+  <div class="container">
+    <h1>Say hello.</h1>
+    <p>Order trouble, a book request, or feedback on a shelf — all of it lands in the same inbox.</p>
+  </div>
+</section>
+
+<div class="container">
+  <div class="contact-layout">
+
+    <div class="postcard">
+      <div class="postcard-stamp">PM</div>
+      <h3>PageMint</h3>
+      <p style="color:var(--paper-line);">We reply to most messages within two working days.</p>
+      <ul class="postcard-list">
+        <li>
+          <span class="label">Email</span>
+          <a href="mailto:hello@pagemint.example">hello@pagemint.example</a>
+        </li>
+        <li>
+          <span class="label">Order support</span>
+          <a href="mailto:orders@pagemint.example">orders@pagemint.example</a>
+        </li>
+        <li>
+          <span class="label">Based in</span>
+          <span>Patna, Bihar, India</span>
+        </li>
+        <li>
+          <span class="label">Hours</span>
+          <span>Monday–Saturday, 10am–6pm IST</span>
+        </li>
+      </ul>
+    </div>
+
+    <div>
+      <div class="form-success" id="formSuccess">Thanks — your message has been queued. We'll reply by email soon.</div>
+      <form id="contactForm" onsubmit="event.preventDefault(); document.getElementById('formSuccess').classList.add('is-open'); this.reset();">
+        <div class="form-field">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required placeholder="Your full name" />
+        </div>
+        <div class="form-field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required placeholder="you@example.com" />
+        </div>
+        <div class="form-field">
+          <label for="topic">What's this about?</label>
+          <select id="topic" name="topic">
+            <option>An order I placed</option>
+            <option>A book suggestion</option>
+            <option>Something isn't working</option>
+            <option>Something else</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required placeholder="Tell us what's up…"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Send message</button>
+        <p class="form-note">This form doesn't send email yet — connect it to a form service (like Formspree) or your own backend before going live. See README.md.</p>
+      </form>
+    </div>
+
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" class="logo">Page<span>Mint</span></a>
+        <p style="margin-top:12px;max-width:34ch;">A small digital bookstore for readers who'd rather download than wait for delivery.</p>
+      </div>
+      <div>
+        <h5>Explore</h5>
+        <ul>
+          <li><a href="store.html">Ebooks Store</a></li>
+          <li><a href="store.html?cat=study">Study</a></li>
+          <li><a href="store.html?cat=earning">Earning</a></li>
+          <li><a href="store.html?cat=story">Story</a></li>
+          <li><a href="store.html?cat=comics">Comics</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>PageMint</h5>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Get in touch</h5>
+        <ul>
+          <li><a href="mailto:hello@pagemint.example">hello@pagemint.example</a></li>
+          <li><a href="contact.html">Contact form</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 PageMint. All rights reserved.</span>
+      <span>Made for readers, one shelf at a time.</span>
+    </div>
+  </div>
+</footer>
+
+<div class="modal-overlay" id="bookModal">
+  <div class="modal"></div>
+</div>
+
+<div class="cart-overlay" id="cartOverlay">
+  <div class="cart-drawer">
+    <div class="cart-head">
+      <h3>Your cart</h3>
+      <button class="icon-btn" data-close-cart aria-label="Close cart">✕</button>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-foot" id="cartFoot">
+      <div class="cart-total"><span>Total</span><span id="cartTotalAmount">₹0</span></div>
+      <button class="btn btn-primary btn-block" data-checkout>Checkout</button>
+      <p class="cart-note">Ebooks are delivered as an instant download link after payment.</p>
+    </div>
+  </div>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/render.js"></script>
+<script src="js/cart.js"></script>
+<script>document.addEventListener("DOMContentLoaded", () => { document.querySelector(".nav-toggle")?.addEventListener("click", () => document.querySelector(".main-nav").classList.toggle("is-open")); initBookModal(); });</script>
+</body>
+</html>
